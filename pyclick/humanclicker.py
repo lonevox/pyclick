@@ -24,8 +24,8 @@ class HumanClicker():
         for point in humanCurve.points:
             pyautogui.moveTo(point)
 
-    def click(self, button="left"):
-        pyautogui.click(button=button)
+    def click(self, button="left", clicks=1, interval=0.15):
+        pyautogui.click(button=button, clicks=clicks, interval=interval)
 
 
 
