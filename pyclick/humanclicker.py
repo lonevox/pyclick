@@ -15,7 +15,7 @@ class HumanClicker():
     def __init__(self):
         pass
 
-    def move(self, toPoint, duration=2, humanCurve=None):
+    def move_to_point(self, toPoint, duration=2, humanCurve=None):
         fromPoint = pyautogui.position()
         if not humanCurve:
             humanCurve = HumanCurve(fromPoint, toPoint)
