@@ -3,6 +3,7 @@ from pyclick.humanclicker import HumanClicker
 import pyautogui
 import random
 
+
 class TestHumanClicker(unittest.TestCase):
 
     def test_simple(self):
@@ -24,4 +25,3 @@ class TestHumanClicker(unittest.TestCase):
         hc = HumanClicker()
         hc.move(toPoint)
         self.assertTrue(pyautogui.position() == toPoint)
-

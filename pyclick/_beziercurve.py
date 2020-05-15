@@ -1,6 +1,8 @@
 import math
 
+
 class BezierCurve():
+    
     @staticmethod
     def binomial(n, k):
         """Returns the binomial coefficient "n choose k" """

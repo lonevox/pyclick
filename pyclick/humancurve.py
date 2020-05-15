@@ -4,6 +4,7 @@ import random
 from pyclick._utils import isListOfPoints, isNumeric
 from pyclick._beziercurve import BezierCurve
 
+
 class HumanCurve():
     """
     Generates a human-like mouse curve starting at given source point,

@@ -1,7 +1,9 @@
 import numpy as np
 
+
 def isNumeric(val):
     return isinstance(val, (float, int, np.int32, np.int64, np.float32, np.float64))
+
 
 def isListOfPoints(l):
     if not isinstance(l, list):

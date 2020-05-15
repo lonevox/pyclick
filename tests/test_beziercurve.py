@@ -1,7 +1,9 @@
 import unittest
 from pyclick._beziercurve import BezierCurve
 
+
 class TestBezierCurve(unittest.TestCase):
+
     def test_binomial(self):
         self.assertEqual(BezierCurve.binomial(10,2), 45)
         self.assertEqual(BezierCurve.binomial(4,2), 6)
@@ -20,17 +22,14 @@ class TestBezierCurve(unittest.TestCase):
 
     def test_simpleBernsteinPolynomial(self):
         bernsteinPolynomial = BezierCurve.bernsteinPolynomial([(0,0), (50,50), (100,100)])
-
         self.assertEqual(bernsteinPolynomial(0), (0,0))
         self.assertEqual(bernsteinPolynomial(0.25), (25, 25))
         self.assertEqual(bernsteinPolynomial(0.5), (50, 50))
         self.assertEqual(bernsteinPolynomial(0.75), (75, 75))
         self.assertEqual(bernsteinPolynomial(1), (100,100))
 
-
     def test_complexBernsteinPolynomial(self):
         bernsteinPolynomial = BezierCurve.bernsteinPolynomial([(0,0), (40,40), (100,100)])
-
         self.assertEqual(bernsteinPolynomial(0), (0,0))
         self.assertEqual(bernsteinPolynomial(0.25), (21.25,21.25))
         self.assertEqual(bernsteinPolynomial(0.5), (45,45))
@@ -42,7 +41,6 @@ class TestBezierCurve(unittest.TestCase):
         n = 5
         expected_curve_points = [(0,0),(25,25),(50,50),(75,75),(100,100)]
         self.assertEqual(BezierCurve.curvePoints(n, points), expected_curve_points)
-
 
     def test_complexCurvePoints(self):
         points = [(0,0), (40,40), (100,100)]

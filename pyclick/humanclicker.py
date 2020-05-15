@@ -2,6 +2,7 @@ import pyautogui
 import random
 from pyclick.humancurve import HumanCurve
 
+
 def setup_pyautogui():
     # Any duration less than this is rounded to 0.0 to instantly move the mouse.
     pyautogui.MINIMUM_DURATION = 0  # Default: 0.1
@@ -12,7 +13,9 @@ def setup_pyautogui():
 
 setup_pyautogui()
 
+
 class HumanClicker():
+    
     def __init__(self):
         pass
 
@@ -32,8 +35,3 @@ class HumanClicker():
 
     def click(self, button="left", clicks=1, interval=0.15):
         pyautogui.click(button=button, clicks=clicks, interval=interval)
-
-
-
-
-

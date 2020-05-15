@@ -2,7 +2,9 @@ import unittest
 import numpy as np
 from pyclick._utils import isNumeric, isListOfPoints
 
+
 class TestBezierCurve(unittest.TestCase):
+
     def test_isNumeric(self):
         self.assertTrue(isNumeric(1))
         self.assertTrue(isNumeric(1.0))

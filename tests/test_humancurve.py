@@ -2,6 +2,7 @@ import unittest
 import pytweening
 from pyclick.humanclicker import HumanCurve
 
+
 class TestHumanCurve(unittest.TestCase):
 
     def test_generateCurve(self):
