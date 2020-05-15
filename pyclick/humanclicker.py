@@ -1,4 +1,5 @@
 import pyautogui
+import random
 from pyclick.humancurve import HumanCurve
 
 def setup_pyautogui():
@@ -23,6 +24,11 @@ class HumanClicker():
         pyautogui.PAUSE = duration / len(humanCurve.points)
         for point in humanCurve.points:
             pyautogui.moveTo(point)
+
+    def move_to_rect(self, x, y, w, h, duration=2, humanCurve=None):
+        random_x = random.randint(x, x + w)
+        random_y = random.randint(y, y + h)
+        self.move_to_point((random_x, random_y), duration)
 
     def click(self, button="left", clicks=1, interval=0.15):
         pyautogui.click(button=button, clicks=clicks, interval=interval)
