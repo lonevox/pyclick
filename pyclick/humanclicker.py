@@ -32,7 +32,7 @@ class HumanClicker():
     def move_to_rect(self, x, y, w, h, duration=2, human_curve=None):
         random_x = random.randint(x, x + w)
         random_y = random.randint(y, y + h)
-        self.move_to_point((random_x, random_y), duration)
+        self.move_to_point((random_x, random_y), duration, human_curve)
 
     def move_to_ellipse(self, ellipse_origin_point, width, height, do_random_scale=True, duration=2, human_curve=None):
         # Randomise the scale of the ellipse (between 0x and 1x scale)
@@ -49,7 +49,7 @@ class HumanClicker():
         y = (w*h*Math.cos(angle)) / Math.sqrt((h*Math.cos(angle))**2 + (w*Math.sin(angle))**2)
         # Calculate final mouse point and move to that point
         to_point = (int(round(x + ellipse_origin_point[0])), int(round(y + ellipse_origin_point[1])))
-        self.move_to_point(to_point, duration)
+        self.move_to_point(to_point, duration, human_curve)
 
     def click(self, button="left", clicks=1, interval=0.15):
         pyautogui.click(button=button, clicks=clicks, interval=interval)
