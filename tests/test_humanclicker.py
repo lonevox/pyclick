@@ -8,20 +8,20 @@ class TestHumanClicker(unittest.TestCase):
 
     def test_simple(self):
         width, height = pyautogui.size()
-        toPoint = (width//2, height//2)
+        to_point = (width//2, height//2)
         hc = HumanClicker()
-        hc.move(toPoint)
-        self.assertTrue(pyautogui.position() == toPoint)
+        hc.move(to_point)
+        self.assertTrue(pyautogui.position() == to_point)
 
-    def test_identityMove(self):
-        toPoint = pyautogui.position()
+    def test_identity_move(self):
+        to_point = pyautogui.position()
         hc = HumanClicker()
-        hc.move(toPoint)
-        self.assertTrue(pyautogui.position() == toPoint)
+        hc.move(to_point)
+        self.assertTrue(pyautogui.position() == to_point)
 
-    def test_randomMove(self):
+    def test_random_move(self):
         width, height = pyautogui.size()
-        toPoint = random.randint(width//2,width-1), random.randint(height//2,height-1)
+        to_point = random.randint(width//2,width-1), random.randint(height//2,height-1)
         hc = HumanClicker()
-        hc.move(toPoint)
-        self.assertTrue(pyautogui.position() == toPoint)
+        hc.move(to_point)
+        self.assertTrue(pyautogui.position() == to_point)

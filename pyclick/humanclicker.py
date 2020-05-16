@@ -20,25 +20,25 @@ class HumanClicker():
     def __init__(self):
         pass
 
-    def move_to_point(self, toPoint, duration=2, humanCurve=None):
-        fromPoint = pyautogui.position()
-        if not humanCurve:
-            humanCurve = HumanCurve(fromPoint, toPoint)
+    def move_to_point(self, to_point, duration=2, human_curve=None):
+        from_point = pyautogui.position()
+        if not human_curve:
+            human_curve = HumanCurve(from_point, to_point)
 
-        pyautogui.PAUSE = duration / len(humanCurve.points)
-        for point in humanCurve.points:
+        pyautogui.PAUSE = duration / len(human_curve.points)
+        for point in human_curve.points:
             pyautogui.moveTo(point)
 
-    def move_to_rect(self, x, y, w, h, duration=2, humanCurve=None):
+    def move_to_rect(self, x, y, w, h, duration=2, human_curve=None):
         random_x = random.randint(x, x + w)
         random_y = random.randint(y, y + h)
         self.move_to_point((random_x, random_y), duration)
 
-    def move_to_ellipse(self, ellipseOriginPoint, width, height, doRandomScale=True, duration=2, humanCurve=None):
+    def move_to_ellipse(self, ellipse_origin_point, width, height, do_random_scale=True, duration=2, human_curve=None):
         # Randomise the scale of the ellipse (between 0x and 1x scale)
         w = width
         h = height
-        if doRandomScale == True:
+        if do_random_scale == True:
             random_scale_multiplier = random.random()
             w = width * random_scale_multiplier
             h = height * random_scale_multiplier
@@ -48,8 +48,8 @@ class HumanClicker():
         x = (w*h*Math.sin(angle)) / Math.sqrt((h*Math.cos(angle))**2 + (w*Math.sin(angle))**2)
         y = (w*h*Math.cos(angle)) / Math.sqrt((h*Math.cos(angle))**2 + (w*Math.sin(angle))**2)
         # Calculate final mouse point and move to that point
-        toPoint = (int(round(x + ellipseOriginPoint[0])), int(round(y + ellipseOriginPoint[1])))
-        self.move_to_point(toPoint, duration)
+        to_point = (int(round(x + ellipse_origin_point[0])), int(round(y + ellipse_origin_point[1])))
+        self.move_to_point(to_point, duration)
 
     def click(self, button="left", clicks=1, interval=0.15):
         pyautogui.click(button=button, clicks=clicks, interval=interval)
