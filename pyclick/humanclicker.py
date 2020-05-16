@@ -1,6 +1,7 @@
 import pyautogui
 import math as Math
 import random
+import time
 from pyclick.humancurve import HumanCurve
 
 
@@ -51,5 +52,6 @@ class HumanClicker():
         to_point = (int(round(x + ellipse_origin_point[0])), int(round(y + ellipse_origin_point[1])))
         self.move_to_point(to_point, duration, human_curve)
 
-    def click(self, button="left", clicks=1, interval=0.15):
+    def click(self, button="left", delay_range=(0, 0), clicks=1, interval=0.15):
+        time.sleep(random.uniform(*delay_range))
         pyautogui.click(button=button, clicks=clicks, interval=interval)
