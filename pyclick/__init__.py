@@ -1,3 +1,3 @@
 name = 'pyclick'
-from pyclick.humanclicker import HumanClicker
+import pyclick.humanclicker
 from pyclick.humancurve import HumanCurve
