@@ -11,10 +11,13 @@ from pyclick import HumanClicker
 hc = HumanClicker()
 
 # move the mouse to position (100,100) on the screen in approximately 2 seconds
-hc.move((100,100),2)
+hc.move_to_point((100,100),2)
 
-# mouse click(left button)
+# mouse click (left button)
 hc.click()
+
+# mouse click (right button)
+hc.click('right')
 ```
 You can also customize the mouse curve by passing a HumanCurve to HumanClicker. You can control:
 - number of internal knots, to change the overall shape of the curve,
