@@ -16,7 +16,7 @@ def setup_pyautogui():
 setup_pyautogui()
 
 
-def move_to_point(to_point, duration=2, human_curve=None):
+def move_to_point(to_point, duration=1, human_curve=None):
     from_point = pyautogui.position()
     if not human_curve:
         human_curve = HumanCurve(from_point, to_point)
@@ -26,13 +26,13 @@ def move_to_point(to_point, duration=2, human_curve=None):
         pyautogui.moveTo(point)
 
 
-def move_to_rect(x, y, w, h, duration=2, human_curve=None):
+def move_to_rect(x, y, w, h, duration=1, human_curve=None):
     random_x = random.randint(x, x + w)
     random_y = random.randint(y, y + h)
     move_to_point((random_x, random_y), duration, human_curve)
 
 
-def move_to_ellipse(ellipse_origin_point, width, height, do_random_scale=True, duration=2, human_curve=None):
+def move_to_ellipse(ellipse_origin_point, width, height, do_random_scale=True, duration=1, human_curve=None):
     # Randomise the scale of the ellipse (between 0x and 1x scale)
     w = width
     h = height
