@@ -22,16 +22,16 @@ class HumanCurve():
         You can override any of the below parameters. If no parameter is
         passed, the default value is used.
         """
-        offset_boundary_x = kwargs.get("offset_boundary_x", 100)
-        offset_boundary_y = kwargs.get("offset_boundary_y", 100)
+        offset_boundary_x = kwargs.get("offset_boundary_x", 25)
+        offset_boundary_y = kwargs.get("offset_boundary_y", 25)
         left_boundary = kwargs.get("left_boundary", min(self.from_point[0], self.to_point[0])) - offset_boundary_x
         right_boundary = kwargs.get("right_boundary", max(self.from_point[0], self.to_point[0])) + offset_boundary_x
         down_boundary = kwargs.get("down_boundary", min(self.from_point[1], self.to_point[1])) - offset_boundary_y
         up_boundary = kwargs.get("up_boundary", max(self.from_point[1], self.to_point[1])) + offset_boundary_y
         knots_count = kwargs.get("knots_count", 2)
-        distortion_mean = kwargs.get("distortion_mean", 1)
+        distortion_mean = kwargs.get("distortion_mean", 1.05)
         distortion_stdev = kwargs.get("distortion_stdev", 1)
-        distortion_frequency = kwargs.get("distortion_frequency", 0.5)
+        distortion_frequency = kwargs.get("distortion_frequency", 0.25)
         tween = kwargs.get("tweening", pytweening.easeOutQuad)
         target_points = kwargs.get("target_points", 100)
 
